@@ -1,0 +1,20 @@
+{
+  "name": "api_barber_shop",
+  "version": "1.0.0",
+  "description": "Backend de barber shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js" ,
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertoMaz/ApiBarberShop.git"
+  },
+  "author": "Roberto Mazzarello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertoMaz/ApiBarberShop/issues"
+  },
+  "homepage": "https://github.com/RobertoMaz/ApiBarberShop#readme"
+}
