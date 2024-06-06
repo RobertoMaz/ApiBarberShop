@@ -7,14 +7,6 @@
     "start": "node index.js" ,
     "dev": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RobertoMaz/ApiBarberShop.git"
-  },
   "author": "Roberto Mazzarello",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RobertoMaz/ApiBarberShop/issues"
-  },
-  "homepage": "https://github.com/RobertoMaz/ApiBarberShop#readme"
+  "license": "ISC"
 }
