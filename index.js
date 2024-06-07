@@ -1,10 +1,9 @@
 import express from 'express'
+import servicesRoutes from './routes/servicesRoutes.js'
 
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send('Hola')
-})
+app.use('/apiv1/services', servicesRoutes)
 
 const PORT = process.env.PORT || 4000
 
