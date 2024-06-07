@@ -1,26 +1,10 @@
 import express from "express"
-import { services } from "../data/beautyServices.js"
+import { createServices, getServices, getServicesById } from '../controllers/servicesController.js'
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-
-    const products = [
-
-        {
-            id: 1,
-            price: 30,
-            name: 'laptop'
-        },
-        {
-            id: 2,
-            price: 80,
-            name: 'monitor'
-        },
-    ]
-
-
-    res.json(products)
-})
+router.get('/', getServices)
+router.post('/', createServices)
+router.post('/:id', getServicesById)
 
 export default router

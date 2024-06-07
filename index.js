@@ -1,7 +1,16 @@
 import express from 'express'
 import servicesRoutes from './routes/servicesRoutes.js'
+import { db } from './config/db.js'
+import { configDotenv } from 'dotenv'
+
+configDotenv()
+
 
 const app = express()
+
+app.use(express.json())
+
+db()
 
 app.use('/apiv1/services', servicesRoutes)
 
