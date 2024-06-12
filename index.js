@@ -1,8 +1,9 @@
 import express from 'express'
-import servicesRoutes from './routes/servicesRoutes.js'
 import { db } from './config/db.js'
 import { configDotenv } from 'dotenv'
 import cors from 'cors'
+import servicesRoutes from './routes/servicesRoutes.js'
+import authRoutes from './routes/authRoutes.js'
 
 configDotenv()
 
@@ -27,9 +28,10 @@ const corsOptions = {
         }
     }
 }
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 app.use('/apiv1/services', servicesRoutes)
+app.use('/apiv1/auth', authRoutes)
 
 const PORT = process.env.PORT || 4000
 
