@@ -28,7 +28,7 @@ const corsOptions = {
         }
     }
 }
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.use('/apiv1/services', servicesRoutes)
 app.use('/apiv1/auth', authRoutes)
