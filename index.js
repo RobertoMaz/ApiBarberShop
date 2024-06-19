@@ -4,6 +4,8 @@ import { db } from './config/db.js'
 import cors from 'cors'
 import servicesRoutes from './routes/servicesRoutes.js'
 import authRoutes from './routes/authRoutes.js'
+import appointmentRoutes from './routes/appointmentRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 dotenv.config()
 
@@ -29,6 +31,8 @@ app.use(cors(corsOptions))
 
 app.use('/apiv1/services', servicesRoutes)
 app.use('/apiv1/auth', authRoutes)
+app.use('/apiv1/appointments', appointmentRoutes)
+app.use('/apiv1/users', userRoutes)
 
 const PORT = process.env.PORT || 4000
 
