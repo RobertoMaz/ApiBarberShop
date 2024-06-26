@@ -20,5 +20,26 @@ export async function sendEmailVerification({name, email, token}) {
             `
     })
 
-    console.log('Mensaje enviado', info.messageId)
+}
+
+export async function sendEmailPasswordReset({name, email, token}) {
+    const transporter = createTransport(
+        process.env.EMAIL_HOST,
+        process.env.EMAIL_PORT,
+        process.env.EMAIL_USER,
+        process.env.EMAIL_PASS,
+    )
+
+    const info = await transporter.sendMail({
+        from: 'Barbershopt <barbershor2381723@barbershopapp923942.com>',
+        to: email,
+        subject: 'Barbershop - Reestablecer password',
+        text: 'Barbershop - Reestablecer password',
+        html: `<p>Hola ${name}, has solicitado reestablecer tu password.</p>
+            <p>Has click en el siguiente enlace para generar un nuevo password: </p>
+            <a href="${process.env.FRONTEND_URL}/auth/olvide-password/${token}">Reestablecer Password</a>
+            <p>Si tu no solicitaste reestablecer tu password, puedes ignorar este correo.</p>
+            `
+    })
+
 }
