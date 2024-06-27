@@ -12,7 +12,7 @@ router.get('/forgot-password/:token', verifyPasswordResetToken)
 router.post('/forgot-password/:token', updatePassword)
 
 router.get('/user', authMiddleware, user)
-router.get('/admin',authMiddleware, admin)
+router.get('/admin', authMiddleware, admin)
 
 
 export default router

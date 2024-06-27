@@ -89,6 +89,7 @@ const login = async (req, res) => {
 
 const user = async (req, res) => {
     const { user } = req
+
     res.json(user)
 }
 
