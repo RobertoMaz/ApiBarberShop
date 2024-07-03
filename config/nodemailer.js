@@ -7,6 +7,7 @@ export function createTransport(host, port, user, pass){
         auth: {
             user,
             pass
-        }
+        },
+        tls: { rejectUnauthorized: false }
     })
 }
