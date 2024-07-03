@@ -10,7 +10,6 @@ function validateObjectId(id, res) {
             msg: error.message
         })
     }
-
 }
 
 function handleNotFoundError(message, res){
@@ -40,5 +39,4 @@ export {
     uniqueId,
     generateJWT,
     formatDate
-
 }

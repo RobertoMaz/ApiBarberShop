@@ -13,7 +13,6 @@ const register = async (req, res) => {
         return res.status(400).json({msg: error.message})
     }
 
-
     if(userExists){
         const error = new Error('El correo ya existe')
         return res.status(400).json({msg: error.message})
@@ -27,7 +26,6 @@ const register = async (req, res) => {
     try {
         const user = new User(req.body)
         const result = await user.save()
-
         const { name, email, token } = result
 
         sendEmailVerification({name, email, token})
@@ -60,13 +58,13 @@ const verifyAccount = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
 }
 
 const login = async (req, res) => {
     const { email, password } = req.body
 
     const user = await User.findOne({email})
+
     if(!user){
         const error = new Error(`El correo no existe.`)
         return res.status(401).json({msg: error.message})
@@ -84,21 +82,17 @@ const login = async (req, res) => {
         const error = new Error(`El password es incorrecto.`)
         return res.status(401).json({msg: error.message})
     }
-
 }
 
 const user = async (req, res) => {
     const { user } = req
-
     res.json(user)
 }
 
 const forgotPassword = async (req, res) => {
     const { email } = req.body
 
-    
     const user = await User.findOne({email})
-
 
     if(!user){
         const error = new Error(`El correo no existe.`)
@@ -118,8 +112,6 @@ const forgotPassword = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
-
 }
 
 const verifyPasswordResetToken = async (req, res) => {
@@ -137,8 +129,8 @@ const verifyPasswordResetToken = async (req, res) => {
 
 const updatePassword = async (req, res) => {
     const { token } = req.params
+    const { password } = req.body
 
-    console.log(token)
     const user = await User.findOne({token})
 
     if(!user){
@@ -146,7 +138,6 @@ const updatePassword = async (req, res) => {
         return res.status(400).json({msg: error.message})        
     }
     
-    const { password } = req.body
     try {
         user.token = ''
         user.password = password
@@ -164,10 +155,8 @@ const admin = async (req, res) => {
         return res.status(403).json({msg: error.message})
     }
 
-    
     res.json(user)
 }
-
 
 export {
     register,
@@ -178,5 +167,4 @@ export {
     verifyPasswordResetToken,
     updatePassword,
     admin
-
 }

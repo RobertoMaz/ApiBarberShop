@@ -1,16 +1,13 @@
 import Appointment from "../models/Appointment.js"
 
-
 const getUserAppointments = async (req, res) => {
     const { user } = req.params
-
-    // const role = 'admin'
-    // if(user !== req.user._id.toString() && role !== 'admin'){
 
     if(user !== req.user._id.toString()){
         const error = new Error('Acceso denegado')
         return res.status(400).json({ msg: error.message })
     }
+
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
@@ -24,12 +21,8 @@ const getUserAppointments = async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
 }
 
-
 export {
-
-    getUserAppointments,
-
+    getUserAppointments
 }

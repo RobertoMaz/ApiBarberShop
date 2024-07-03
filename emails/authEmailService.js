@@ -19,7 +19,6 @@ export async function sendEmailVerification({name, email, token}) {
             <p>Si tu no creaste esta cuenta, puedes ignorar este correo.</p>
             `
     })
-
 }
 
 export async function sendEmailPasswordReset({name, email, token}) {
@@ -41,5 +40,4 @@ export async function sendEmailPasswordReset({name, email, token}) {
             <p>Si tu no solicitaste reestablecer tu password, puedes ignorar este correo.</p>
             `
     })
-
 }

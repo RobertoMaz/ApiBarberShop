@@ -1,6 +1,5 @@
 import { createTransport } from "../config/nodemailer.js"
 
-
 export async function sendEmailNewAppointment({date, time}) {
     const transporter = createTransport(
         process.env.EMAIL_HOST,
@@ -8,7 +7,6 @@ export async function sendEmailNewAppointment({date, time}) {
         process.env.EMAIL_USER,
         process.env.EMAIL_PASS,
     )
-
 
     await transporter.sendMail({
         from: 'Barbershopt <citas@barbershopapp923942.com>',
@@ -21,7 +19,6 @@ export async function sendEmailNewAppointment({date, time}) {
     })
 }
 
-
 export async function sendEmailUpdateAppointment({date, time}) {
     const transporter = createTransport(
         process.env.EMAIL_HOST,
@@ -29,7 +26,6 @@ export async function sendEmailUpdateAppointment({date, time}) {
         process.env.EMAIL_USER,
         process.env.EMAIL_PASS,
     )
-
 
     await transporter.sendMail({
         from: 'Barbershopt <citas@barbershopapp923942.com>',

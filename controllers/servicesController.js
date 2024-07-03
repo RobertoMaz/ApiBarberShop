@@ -33,15 +33,16 @@ const getServices = async (req, res) => {
 const getServiceById = async (req, res) => {
 
     const { id } = req.params
+
     if(validateObjectId(id, res)) return
 
     const service = await Services.findById(id)
+
     if(!service){
         return handleNotFoundError("El servicio no existe", res)
     }
     
     res.json(service)
-    // res.json(services)
 }
 
 const updateService = async (req, res) => {
@@ -50,6 +51,7 @@ const updateService = async (req, res) => {
     if(validateObjectId(id, res)) return
 
     const service = await Services.findById(id)
+    
     if(!service){
         return handleNotFoundError("El servicio no existe", res)
     }

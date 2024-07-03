@@ -28,7 +28,6 @@ const getAppointmentsByDate = async (req, res) => {
         return res.status(400).json({msg: error.message})  
     }
     const isoDate = formatISO(newDate)
-    console.log(isoDate)
 
     const appointments = await Appointment.find({ date: {
         $gte: startOfDay(new Date(isoDate)),
