@@ -28,8 +28,8 @@ export async function sendEmailUpdateAppointment({date, time}) {
     )
 
     await transporter.sendMail({
-        from: 'Barbershop <citas@barbershopapp923942.com>',
-        to: 'admin@adminsalon.com',
+        from: 'Barbershop <roberBarberia@roberBarberia.com>',
+        to: 'robelph@gmail.com',
         subject: 'Barbershop - Cita Actualizada',
         text: 'Barbershop - Cita Actualizada',
         html: `<p>Hola Admin, un usuario ha modificado una cita.</p>
@@ -48,8 +48,8 @@ export async function sendEmailCancelledAppointment({date, time}) {
 
 
     await transporter.sendMail({
-        from: 'Barbershop <citas@barbershopapp923942.com>',
-        to: 'admin@adminsalon.com',
+        from: 'Barbershop <roberBarberia@roberBarberia.com>',
+        to: 'robelph@gmail.com',
         subject: 'Barbershop - Cita Cancelada',
         text: 'Barbershop - Cita Cancelada',
         html: `<p>Hola Admin, un usuario ha cancelado una cita.</p>

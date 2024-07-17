@@ -9,7 +9,7 @@ export async function sendEmailVerification({name, email, token}) {
     )
 
     const info = await transporter.sendMail({
-        from: 'Barbershop <barbershor2381723@barbershopapp923942.com>',
+        from: 'Barbershop <roberBarberia@roberBarberia.com>',
         to: email,
         subject: 'Barbershop - Confirma tu cuenta',
         text: 'Barbershop - Confirma tu cuenta',
@@ -30,7 +30,7 @@ export async function sendEmailPasswordReset({name, email, token}) {
     )
 
     const info = await transporter.sendMail({
-        from: 'Barbershop <barbershor2381723@barbershopapp923942.com>',
+        from: 'Barbershop <roberBarberia@roberBarberia.com>',
         to: email,
         subject: 'Barbershop - Reestablecer password',
         text: 'Barbershop - Reestablecer password',
